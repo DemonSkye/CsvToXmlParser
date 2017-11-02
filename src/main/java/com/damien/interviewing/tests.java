@@ -35,6 +35,7 @@ public class tests {
             for(int i=0; i< headers.length; i++){
                 if(!headers[i].equals(correctHeaders[i])){
                     equal = false;
+                    break;
                 }
             }
         }
