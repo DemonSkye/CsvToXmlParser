@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
+<people>
 	<person>
 		<FIRST_NAME>DAMIEN</FIRST_NAME>
 		<LAST_NAME>BELL</LAST_NAME>
@@ -43,4 +43,4 @@
 		<PHONE>781-351-2389</PHONE>
 		<EMAIL_ADDRESS>phil.test@test.com</EMAIL_ADDRESS>
 	</person>
-</root>
+</people>
