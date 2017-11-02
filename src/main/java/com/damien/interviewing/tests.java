@@ -1,7 +1,8 @@
 package com.damien.interviewing;
 
 import org.junit.*;
-import java.io.BufferedReader;
+
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -43,6 +44,25 @@ public class tests {
             equal = false;
         }
         assert(equal);
-}
+    }
+    @Test
+    public void testWriteToFile(){
+        Strings.add("First_Name,Last_Name");
+        Strings.add("Damien,Bell");
+        Strings.add("Test,McTest");
+        String[] Headers = HelperMethods.setHeaders(Strings);
+        Strings.remove(0);
+        HelperMethods.writeXmlFile(Headers,Strings,"xmlTestOutput.xml");
+
+        BufferedReader br = null;
+        try{
+            br = new BufferedReader(new FileReader("xmlTestOutput.xml"));
+        }catch(FileNotFoundException fnf) {
+            System.err.println("GetCsv Method could not find file at " + System.getProperty("user.dir") + "\\xmlTestOutput.xml");
+            fnf.printStackTrace();
+        }catch(Exception e) { System.err.println("Unknown error occurred in GetCsvFile: "); e.printStackTrace(); }
+
+        assert(br != null);
+    }
 
 }

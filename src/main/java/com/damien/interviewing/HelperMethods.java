@@ -40,9 +40,9 @@ public class HelperMethods {
 
     //Write the strings to csv
     //This makes some assumptions that each line represents a "person", this could be changed via command-line args in the future.
-    public static void writeXmlFile(String[] headers, ArrayList <String> stringsFromCsv){
+    public static void writeXmlFile(String[] headers, ArrayList <String> stringsFromCsv, String fileName){
         try {
-            BufferedWriter buffWrite = new BufferedWriter(new FileWriter("xmlOutput.xml"));
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(fileName));
             buffWrite.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
             buffWrite.write("<people>\r\n");
             //For each string in the csv file

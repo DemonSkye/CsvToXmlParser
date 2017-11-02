@@ -21,6 +21,6 @@ public class Main {
         }*/
         String[] columnHeaders = HelperMethods.setHeaders(csvFileStrings);
         csvFileStrings.remove(0); // Remove headers from the csvStrings Arraylist
-        HelperMethods.writeXmlFile(columnHeaders, csvFileStrings);
+        HelperMethods.writeXmlFile(columnHeaders, csvFileStrings, "xmlOutput.xml");
     }
 }
