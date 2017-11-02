@@ -45,10 +45,16 @@ public class HelperMethods {
             BufferedWriter buffWrite = new BufferedWriter(new FileWriter("xmlOutput.xml"));
             buffWrite.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
             buffWrite.write("<people>\r\n");
+            //For each string in the csv file
             for(String s:stringsFromCsv){
                 buffWrite.write("\t<person>\r\n");
+
+                //Split the line into an array of strings
                 String fields[] = s.split(",");
+
+                //For each item in that array of strings
                 for(int i=0; i<fields.length; i++){
+                    //Write the corresponding header to the file, as well as the value from the array 'fields'
                     buffWrite.write("\t\t<" + headers[i] +">"+ fields[i] + "</" + headers[i] +">\n");
                 }
                 buffWrite.write("\t</person>\n");
